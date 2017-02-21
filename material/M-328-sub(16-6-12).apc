@@ -1,0 +1,160 @@
+#####################################################
+# Date:        Sunday, 12/June/'16
+# Interface:   APWLink (USB)
+# Product:     STA350BW
+# Description: <none>
+#####################################################
+
+################### FFX registers ###################
+
+Reg[00h] = 63h ## Configuration Register A
+Reg[01h] = 80h ## Configuration Register B
+Reg[02h] = 97h ## Configuration Register C
+Reg[03h] = 40h ## Configuration Register D
+Reg[04h] = 02h ## Configuration Register E
+Reg[05h] = DFh ## Configuration Register F
+Reg[06h] = 10h ## Master Mute
+Reg[07h] = 16h ## Master Volume
+Reg[08h] = 60h ## Channel 1 Volume
+Reg[09h] = 60h ## Channel 2 Volume
+Reg[0Ah] = 60h ## Channel 3 Volume
+Reg[0Bh] = 80h ## Audio Preset Register 1
+Reg[0Ch] = 00h ## Audio Preset Register 2
+Reg[0Eh] = 00h ## Channel 1 Config
+Reg[0Fh] = 40h ## Channel 2 Config
+Reg[10h] = 90h ## Channel 3 Config
+Reg[11h] = 77h ## Bass and Treble Tone Control
+Reg[12h] = 69h ## Limiter 1 Attack/Release Rate
+Reg[13h] = 69h ## Limiter 1 Attack/Release Threshold
+Reg[14h] = 6Ah ## Limiter 2 Attack/Release Rate
+Reg[15h] = 69h ## Limiter 2 Attack/Release Threshold
+Reg[16h] = 00h ## Coefficient Address Bits 5..0
+Reg[17h] = 00h ## Coefficient b1 Data Bits 23..16
+Reg[18h] = 00h ## Coefficient b1 Data Bits 15..8
+Reg[19h] = 00h ## Coefficient b1 Data Bits 7..0
+Reg[1Ah] = 00h ## Coefficient b2 Data Bits 23..16
+Reg[1Bh] = 00h ## Coefficient b2 Data Bits 15..8
+Reg[1Ch] = 00h ## Coefficient b2 Data Bits 7..0
+Reg[1Dh] = 00h ## Coefficient a1 Data Bits 23..16
+Reg[1Eh] = 00h ## Coefficient a1 Data Bits 15..8
+Reg[1Fh] = 00h ## Coefficient a1 Data Bits 7..0
+Reg[20h] = 00h ## Coefficient a2 Data Bits 23..16
+Reg[21h] = 00h ## Coefficient a2 Data Bits 15..8
+Reg[22h] = 00h ## Coefficient a2 Data Bits 7..0
+Reg[23h] = 00h ## Coefficient b0 Data Bits 23..16
+Reg[24h] = 00h ## Coefficient b0 Data Bits 15..8
+Reg[25h] = 00h ## Coefficient b0 Data Bits 7..0
+Reg[26h] = 00h ## Coefficient Write Control
+Reg[27h] = 1Ah ## Max Power Correction Config Msb
+Reg[28h] = C0h ## Max Power Correction Config Lsb
+Reg[29h] = F3h ## Variable Distortion Compensation Msb
+Reg[2Ah] = 33h ## Variable Distortion Compensation Lsb
+Reg[2Bh] = 00h ## Fault Detect Recovery Bits Msb
+Reg[2Ch] = 0Ch ## Fault Detect Recovery Bits Lsb
+Reg[2Dh] = 7Fh ## Device Status
+Reg[31h] = 00h ## EQ Coeff and DRC Configuration
+Reg[32h] = 30h ## Limiter 1 Ext.Attack Threshold
+Reg[33h] = 30h ## Limiter 1 Ext.Release Threshold
+Reg[34h] = 30h ## Limiter 2 Ext.Attack Threshold
+Reg[35h] = 30h ## Limiter 2 Ext.Release Threshold
+Reg[36h] = 00h ## Extended Configuraton Register
+Reg[37h] = 00h ## EQ Soft Volume Config (fade-in)
+Reg[38h] = 00h ## EQ Soft Volume Config (fade-out)
+Reg[39h] = 01h ## DRC RMS Filter Coefficient C0 Bits 25..16
+Reg[3Ah] = EEh ## DRC RMS Filter Coefficient C0 Bits 15..8
+Reg[3Bh] = FFh ## DRC RMS Filter Coefficient C0 Bits 7..0
+Reg[3Ch] = 7Eh ## DRC RMS Filter Coefficient C1 Bits 25..16
+Reg[3Dh] = C0h ## DRC RMS Filter Coefficient C1 Bits 15..8
+Reg[3Eh] = 26h ## DRC RMS Filter Coefficient C1 Bits 7..0
+Reg[3Fh] = 00h ## Extended Volume Resolution
+Reg[48h] = 00h ## Noise Shaping
+Reg[49h] = 00h ## Extended Coef Range 4-1
+Reg[4Ah] = 00h ## Extended Coef Range 7-5
+Reg[4Bh] = 04h ## Miscellaneous 1
+Reg[4Ch] = 00h ## Miscellaneous 2
+
+################# FFX coefficients ##################
+
+Coef[000h] = 000000h ## Coefficient 0x00 - C1H10 (b1/2)
+Coef[001h] = 000000h ## Coefficient 0x01 - C1H11 (b2)  
+Coef[002h] = 000000h ## Coefficient 0x02 - C1H12 (a1/2)
+Coef[003h] = 000000h ## Coefficient 0x03 - C1H13 (a2)  
+Coef[004h] = 400000h ## Coefficient 0x04 - C1H14 (b0/2)
+Coef[005h] = 000000h ## Coefficient 0x05 - C1H20 (b1/2)
+Coef[006h] = 000000h ## Coefficient 0x06 - C1H21 (b2)  
+Coef[007h] = 000000h ## Coefficient 0x07 - C1H22 (a1/2)
+Coef[008h] = 000000h ## Coefficient 0x08 - C1H23 (a2)  
+Coef[009h] = 400000h ## Coefficient 0x09 - C1H24 (b0/2)
+Coef[00Ah] = 000000h ## Coefficient 0x0A - C1H30 (b1/2)
+Coef[00Bh] = 000000h ## Coefficient 0x0B - C1H31 (b2)  
+Coef[00Ch] = 000000h ## Coefficient 0x0C - C1H32 (a1/2)
+Coef[00Dh] = 000000h ## Coefficient 0x0D - C1H33 (a2)  
+Coef[00Eh] = 400000h ## Coefficient 0x0E - C1H34 (b0/2)
+Coef[00Fh] = 000000h ## Coefficient 0x0F - C1H40 (b1/2)
+Coef[010h] = 000000h ## Coefficient 0x10 - C1H41 (b2)  
+Coef[011h] = 000000h ## Coefficient 0x11 - C1H42 (a1/2)
+Coef[012h] = 000000h ## Coefficient 0x12 - C1H43 (a2)  
+Coef[013h] = 400000h ## Coefficient 0x13 - C1H44 (b0/2)
+Coef[014h] = 000000h ## Coefficient 0x14 - C2H10 (b1/2)
+Coef[015h] = 000000h ## Coefficient 0x15 - C2H11 (b2)  
+Coef[016h] = 000000h ## Coefficient 0x16 - C2H12 (a1/2)
+Coef[017h] = 000000h ## Coefficient 0x17 - C2H13 (a2)  
+Coef[018h] = 400000h ## Coefficient 0x18 - C2H14 (b0/2)
+Coef[019h] = 000000h ## Coefficient 0x19 - C2H20 (b1/2)
+Coef[01Ah] = 000000h ## Coefficient 0x1A - C2H21 (b2)  
+Coef[01Bh] = 000000h ## Coefficient 0x1B - C2H22 (a1/2)
+Coef[01Ch] = 000000h ## Coefficient 0x1C - C2H23 (a2)  
+Coef[01Dh] = 400000h ## Coefficient 0x1D - C2H24 (b0/2)
+Coef[01Eh] = 000000h ## Coefficient 0x1E - C2H30 (b1/2)
+Coef[01Fh] = 000000h ## Coefficient 0x1F - C2H31 (b2)  
+Coef[020h] = 000000h ## Coefficient 0x20 - C2H32 (a1/2)
+Coef[021h] = 000000h ## Coefficient 0x21 - C2H33 (a2)  
+Coef[022h] = 400000h ## Coefficient 0x22 - C2H34 (b0/2)
+Coef[023h] = 000000h ## Coefficient 0x23 - C2H40 (b1/2)
+Coef[024h] = 000000h ## Coefficient 0x24 - C2H41 (b2)  
+Coef[025h] = 000000h ## Coefficient 0x25 - C2H42 (a1/2)
+Coef[026h] = 000000h ## Coefficient 0x26 - C2H43 (a2)  
+Coef[027h] = 400000h ## Coefficient 0x27 - C2H44 (b0/2)
+Coef[028h] = 000000h ## Coefficient 0x28 - C12H0 (b1/2)
+Coef[029h] = 000000h ## Coefficient 0x29 - C12H1 (b2)  
+Coef[02Ah] = 000000h ## Coefficient 0x2A - C12H2 (a1/2)
+Coef[02Bh] = 000000h ## Coefficient 0x2B - C12H3 (a2)  
+Coef[02Ch] = 400000h ## Coefficient 0x2C - C12H4 (b0/2)
+Coef[02Dh] = 000000h ## Coefficient 0x2D - C3H0  (b1/2)
+Coef[02Eh] = 000000h ## Coefficient 0x2E - C3H1  (b2)  
+Coef[02Fh] = 000000h ## Coefficient 0x2F - C3H2  (a1/2)
+Coef[030h] = 000000h ## Coefficient 0x30 - C3H3  (a2)  
+Coef[031h] = 400000h ## Coefficient 0x31 - C3H4  (b0/2)
+Coef[032h] = 7FFFFFh ## Coefficient 0x32 - Channel 1 Pre-scale
+Coef[033h] = 7FFFFFh ## Coefficient 0x33 - Channel 2 Pre-scale
+Coef[034h] = 7FFFFFh ## Coefficient 0x34 - Channel 1 Post-scale
+Coef[035h] = 7FFFFFh ## Coefficient 0x35 - Channel 2 Post-scale
+Coef[036h] = 7FFFFFh ## Coefficient 0x36 - Channel 3 Post-scale
+Coef[037h] = 5A9DF7h ## Coefficient 0x37 - Twarn/Oc Limit
+Coef[038h] = 000000h ## Coefficient 0x38 - Channel 1 Mix 1
+Coef[039h] = 7FFFFFh ## Coefficient 0x39 - Channel 1 Mix 2
+Coef[03Ah] = 7FFFFFh ## Coefficient 0x3A - Channel 2 Mix 1
+Coef[03Bh] = 000000h ## Coefficient 0x3B - Channel 2 Mix 2
+Coef[03Ch] = 800000h ## Coefficient 0x3C - Channel 3 Mix 1
+Coef[03Dh] = 800000h ## Coefficient 0x3D - Channel 3 Mix 2
+Coef[03Eh] = 000000h ## Reserved
+Coef[03Fh] = 000000h ## Reserved
+
+#################### FFX filters ####################
+
+Filt[Ch:0][00] = type:F gain:+0.00 freq:737.00 q:1.80 scaler:1.00 ## BiQuad 1
+Filt[Ch:0][01] = type:F gain:+0.00 freq:737.00 q:1.80 scaler:1.00 ## BiQuad 2
+Filt[Ch:0][02] = type:F gain:+0.00 freq:737.00 q:1.80 scaler:1.00 ## BiQuad 3
+Filt[Ch:0][03] = type:F gain:+0.00 freq:737.00 q:1.80 scaler:1.00 ## BiQuad 4
+Filt[Ch:0][04] = type:F gain:+0.00 freq:737.00 q:1.80 scaler:1.00 ## BiQuad 5
+Filt[Ch:0][05] = type:F gain:+0.00 freq:737.00 q:1.80 scaler:1.00 ## BiQuad 6
+Filt[Ch:0][06] = type:F gain:+0.00 freq:737.00 q:1.80 scaler:1.00 ## BiQuad 7
+Filt[Ch:0][07] = type:F gain:+0.00 freq:737.00 q:1.80 scaler:1.00 ## BiQuad 8
+Filt[Ch:1][00] = type:F gain:+0.00 freq:737.00 q:1.80 scaler:1.00 ## BiQuad 1
+Filt[Ch:1][01] = type:F gain:+0.00 freq:737.00 q:1.80 scaler:1.00 ## BiQuad 2
+Filt[Ch:1][02] = type:F gain:+0.00 freq:737.00 q:1.80 scaler:1.00 ## BiQuad 3
+Filt[Ch:1][03] = type:F gain:+0.00 freq:737.00 q:1.80 scaler:1.00 ## BiQuad 4
+Filt[Ch:1][04] = type:F gain:+0.00 freq:737.00 q:1.80 scaler:1.00 ## BiQuad 5
+Filt[Ch:1][05] = type:F gain:+0.00 freq:737.00 q:1.80 scaler:1.00 ## BiQuad 6
+Filt[Ch:1][06] = type:F gain:+0.00 freq:737.00 q:1.80 scaler:1.00 ## BiQuad 7
+Filt[Ch:1][07] = type:F gain:+0.00 freq:737.00 q:1.80 scaler:1.00 ## BiQuad 8
